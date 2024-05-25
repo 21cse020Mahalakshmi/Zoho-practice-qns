@@ -1,0 +1,25 @@
+public class Main {
+    public static void generatePrime(int num) {
+    boolean prime[] = new boolean[num + 1];
+    for(int i = 2; i <= num; i++) {
+       prime[i] = true;
+        }
+      for(int p = 2; p <= num / 2; p++) {
+            if(prime[p]) {
+                for(int j = p; j * p <= num; j++) {
+                    prime[j * p] = false;
+                }
+            }
+        }
+
+        for(int i = 2; i <= num; i++) {
+            if(prime[i]) {
+                System.out.println(i + " ");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        generatePrime(15);
+    }
+}
