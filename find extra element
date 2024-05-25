@@ -1,0 +1,42 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class HelloWorld {
+    static int extraelement(int arr1[],int arr2[],int n)
+    {
+        int i=0;
+        int j=0;
+        while(i<n&&j<n-1)
+        {
+            if(arr1[i]==arr2[j])
+            {
+                i++;
+                j++;
+            }
+            else
+            {
+                return i;
+                
+            }
+        }
+        return n-1;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n =sc.nextInt();
+        int arr1[]=new int[n];
+        System.out.print("Enter arr1 elemnts");
+        for(int i=0;i<n;i++)
+        {
+            arr1[i]=sc.nextInt();
+        }
+         int arr2[]=new int[n-1];
+         System.out.print("enter array2 :");
+        for(int i=0;i<n-1;i++)
+        {
+            arr2[i]=sc.nextInt();
+        }
+        
+       System.out.print( extraelement(arr1,arr2,n));
+    }
+}
