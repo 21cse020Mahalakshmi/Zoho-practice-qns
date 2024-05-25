@@ -1,0 +1,64 @@
+import java.util.*;
+public class Main
+
+{ 
+    static void bintohex(String s)
+    {
+        HashMap<String,Character> hexmap=new HashMap<>();
+        hexmap.put("0000",'0');
+        hexmap.put("0001",'1');
+        hexmap.put("0010",'2');
+        hexmap.put("0011",'3');
+        hexmap.put("0100",'4');
+        hexmap.put("0101",'5');
+        hexmap.put("0110",'6');
+        hexmap.put("0111",'7');
+        hexmap.put("1000",'8');
+        hexmap.put("1001",'9');
+        hexmap.put("1010",'A');
+               hexmap.put("1011",'B');
+                hexmap.put("1100",'C');
+                 hexmap.put("1101",'D');
+                  hexmap.put("1110",'E');
+                   hexmap.put("1111",'F');
+                   
+                   
+                   int t=s.indexOf('.');
+                   int l=s.length();
+                   int left=(t==-1)?l:t;
+                   for(int i=1;i<=(4-left%4)%4;i++)
+                   {
+                       s="0"+s;
+                   }
+                    if(t!=0)
+                    {
+                        int right=l=left-1;
+                        for(int i=1;i<=(4-right%4)%4;i++)
+                        {s=s+"0";
+                    }
+                    }
+                    String hex="";
+                    int i=0;
+                    while(true)
+                    {
+                        hex+=hexmap.get(s.substring(i,i+4));
+                        i+=4;
+                        if(i==s.length()-1)
+                        {
+                            break;
+                        }
+                        if(s.charAt(i)=='.')
+                        {
+                            hex+='.';
+                            i++;
+                        }
+                    }
+                    System.out.print(hex);
+          
+    }
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String s=sc.next();
+		bintohex(s);
+	}
+}
