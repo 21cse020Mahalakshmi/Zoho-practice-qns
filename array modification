@@ -1,0 +1,15 @@
+int j = 0;
+
+        // Iterate from the beginning and place non-zero elements in their new positions
+        for (int i = 0; i < n; i++) {
+            if (arr[i] != 0) {
+                arr[j] = arr[i];
+                j++;
+            }
+        }
+
+        // Fill the remaining positions with zeros
+        while (j < n) {
+            arr[j] = 0;
+            j++;
+        }
