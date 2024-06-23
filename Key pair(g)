@@ -1,0 +1,16 @@
+class Solution {
+    boolean hasArrayTwoCandidates(int arr[], int n, int x) {
+       HashSet<Integer> set =new HashSet<>();
+       for(int i=0;i<n;i++)
+       {
+           int comp=x-arr[i];
+           if(set.contains(comp))
+           {
+               return true;
+           }
+           set.add(arr[i]);
+       }
+        
+        return false;
+    }
+}
